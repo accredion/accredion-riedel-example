@@ -19,7 +19,7 @@
                                     ID
                                 </th>
                                 <th
-                                    class="w-3/4 px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                    class="w-3/5 px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
                                     Privileges
                                 </th>
                                 <th
@@ -32,8 +32,14 @@
                             {% for badge in badges %}
                             <tr>
                                 <td class="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
-                                    <div class="text-sm leading-5 font-medium text-gray-900">
-                                        {{ badge.id[-12:] }}
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full object-cover"
+                                                src="http://ebu.accredion.test/{{ badge.attributes.photoUrl }}" />
+                                        </div>
+                                        <div class="ml-4 text-sm leading-5 font-medium text-gray-900">
+                                            {{ badge.id[-12:] }}
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="px-6 py-2 whitespace-no-wrap border-b border-gray-200">
