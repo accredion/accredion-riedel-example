@@ -21,7 +21,7 @@ def get_badges():
     return (
         requests.get(
             "{}/events/{event}/badges".format(API_ROOT, event=EVENT_ID),
-            headers={"Authentication": "Bearer {}".format(API_ACCESS_KEY)},
+            headers={"Authorization": "Bearer {}".format(API_ACCESS_KEY)},
         ).json()["data"]
         if EVENT_ID
         else []
@@ -32,7 +32,7 @@ def post_badge_checkedin(badge_id, privilege_id, event):
     return requests.post(
         "{}/badges/{badge}/checkedin".format(API_ROOT, badge=badge_id),
         json={"privilegeId": privilege_id, "event": event},
-        headers={"Authentication": "Bearer {}".format(API_ACCESS_KEY)},
+        headers={"Authorization": "Bearer {}".format(API_ACCESS_KEY)},
     )
 
 

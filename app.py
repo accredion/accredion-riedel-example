@@ -110,14 +110,14 @@ def on_prints(data):
         prints[i]["attributes"]["status"] = "complete"
         r = requests.post(
             printjob["links"]["complete"],
-            headers={"Authentication": "Bearer {}".format(API_ACCESS_KEY)},
+            headers={"Authorization": "Bearer {}".format(API_ACCESS_KEY)},
         )
     else:
         prints[i]["attributes"]["status"] = "fail"
         r = requests.post(
             printjob["links"]["fail"],
             json={"code": result},
-            headers={"Authentication": "Bearer {}".format(API_ACCESS_KEY)},
+            headers={"Authorization": "Bearer {}".format(API_ACCESS_KEY)},
         )
 
 
